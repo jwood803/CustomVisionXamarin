@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerbsCustomVision.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerbsCustomVision.iOS", "HerbsCustomVision\HerbsCustomVision.iOS\HerbsCustomVision.iOS.csproj", "{8E3EE43F-3A26-4EFD-BF39-9C23172BCCC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerbsCustomVision", "HerbsCustomVision\HerbsCustomVision\HerbsCustomVision.csproj", "{FF76F110-E3A9-4E29-BAAC-F21CF38D67BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerbsCustomVision", "HerbsCustomVision\HerbsCustomVision\HerbsCustomVision.csproj", "{FF76F110-E3A9-4E29-BAAC-F21CF38D67BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
