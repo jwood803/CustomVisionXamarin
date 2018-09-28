@@ -1,19 +1,62 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HerbsCustomVision.CameraPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Take a photo of an herb to classify." 
-           HorizontalOptions="Center"
-           VerticalOptions="EndAndExpand" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        <Button 
-            Text="Camera" 
-            HorizontalOptions="CenterAndExpand" 
-            VerticalOptions="StartAndExpand"
-            Command="{Binding AccessCamera}"
-        />
-    </StackLayout>
+        <BoxView Grid.Row="0"
+         BackgroundColor="LightGray"
+         HorizontalOptions="Fill"
+         VerticalOptions="Fill"></BoxView>
+
+        <Label Grid.Row="0"
+               Text="Take a photo of an herb to classify."
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <Image Grid.Row="0"
+               x:Name="CameraImage"
+               Source="{Binding CameraSource}" />
+
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding TagPredictionModels}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Tag, StringFormat='Tag: {0}'}" />
+                            <Label Text="{Binding Probability, StringFormat='Probability: Value: {0:P2}'}"
+                                   HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Grid.Row="2"
+                     Orientation="Horizontal">
+
+            <Button Text="Camera"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Command="{Binding CameraCommand}" />
+
+            <Button Text="Clear"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Command="{Binding ClearCommand}" />
+
+        </StackLayout>
+
+
+    </Grid>
 </ContentPage>
